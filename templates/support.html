@@ -1,0 +1,108 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Support</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="pricing.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Donate</h1>
+  {% with messages = get_flashed_messages() %}
+
+  {% if messages %}
+
+    {% for message in messages %}
+
+    <div class="alert alert-success" role="alert">
+        {{ message }}
+    </div>
+
+    {% endfor %}
+
+  {% endif %}
+
+{% endwith %}
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">€5</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>One time 5 euros donation</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">
+          <a href={{ url_for('auth_alipay', amount=500) }}>
+              Donate
+          </a>
+        </button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">€50</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>One time 50 euros donation</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">
+          <a href={{ url_for('auth_alipay', amount=5000) }}>
+              Donate
+          </a>
+        </button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">€280</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>One time 280 euros donation</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">
+          <a href={{ url_for('auth_alipay', amount=28000) }}>
+              Donate
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</body>
+</html>
